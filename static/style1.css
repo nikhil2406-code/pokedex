@@ -1,0 +1,133 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            cursor: url('/static/Pokeball.cur'),auto;
+           
+        }
+        a,button,[onclick] {
+            cursor: url('/static/Pokeball.cur'),pointer;
+        }
+        .container {
+            contain: content;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgb(112, 110, 110);
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            text-transform: capitalize;
+        }
+        .back-link {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+        }
+        .main-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .main-img img {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s ease;
+            filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.9));
+        }
+        .main-img img:hover{
+            will-change: transform;
+            transform: scale(1.1);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .info-card {
+            background: #f29090;
+            border-radius: 12px;
+            padding: 15px;
+        }
+        .info-card h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .type-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            text-transform: capitalize;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .ability-item {
+            background: #e0e0e0;
+            padding: 5px 10px;
+            border-radius: 16px;
+            display: inline-block;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            text-transform: capitalize;
+        }
+        .stat-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .stat-name {
+            width: 120px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        .stat-value {
+            width: 40px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        .stat-bar {
+            flex: 1;
+            height: 12px;
+            background: #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .stat-fill {
+            height: 100%;
+            background: #2a75bb;
+            border-radius: 6px;
+        }
+        .type-normal { background-color: #A8A77A; }
+        .type-fire { background-color: #d5884d; }
+        .type-water { background-color: #6d8dd3; }
+        .type-electric { background-color: #dabd47; color: #333; }
+        .type-grass { background-color: #96d471; }
+        .type-ice { background-color: #96D9D6; color: #333; }
+        .type-fighting { background-color: #e4514c; }
+        .type-poison { background-color: #A33EA1; }
+        .type-ground { background-color: #E2BF65; color: #333; }
+        .type-flying { background-color: #A98FF3; }
+        .type-psychic { background-color: #F95587; }
+        .type-bug { background-color: #A6B91A; }
+        .type-rock { background-color: #B6A136; }
+        .type-ghost { background-color: #735797; }
+        .type-dragon { background-color: #6F35FC; }
+        .type-dark { background-color: #705746; }
+        .type-steel { background-color: #B7B7CE; color: #333; }
+        .type-fairy { background-color: #D685AD; }
+    

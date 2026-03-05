@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pokemon.name | capitalize }} - Pokedex </title>
+<link rel="stylesheet" href="/static/style1.css">
+<link rel="preload" as="image" href="{{ pokemon.sprite }}">
+</head>
+<body class="type-{{ primary_type |lower }}">
+    <div class="container">
+
+        <div class="header">
+            <h1>{{pokemon.name | capitalize }} #{{ "%03d"| format(pokemon.id) }}</h1>
+            <a href="/" class="back-link"> Back to Pokedex</a>
+        </div>
+
+        <div class="main-img">
+            <img loading="lazy" src="{{ pokemon.sprite }}" alt="{{ pokemon.name }}">
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>poke info</h3>
+                <p><strong>Height:</strong> {{ pokemon.height }} in</p>
+                <p><strong>Weight:</strong>{{ pokemon.weight }} pounds</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Type</h3>
+                {% for type in pokemon.types %}
+                <span class="type-badge type-{{ type | lower}}">{{ type }}</span>
+                {% endfor %}
+            </div>
+            <div class="info-card">
+                <h3>Abilities</h3>
+                {% for ability in pokemon.abilities %}
+                <span class="ability-item">{{ ability | replace('-',' ') }}</span>
+                {% endfor %}
+            </div>
+            <div class="info-card">
+                <h3>Base stats</h3>
+                {% for stat_name, stat_value in pokemon.stats.items() %}
+                <div class="stat-row">
+                    <span class="stat-name">{{ stat_name | replace('-',' ') }}:</span>
+                    <span class="stat-value">{{ stat_value }}</span>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: {{ (stat_value / 255) * 100 }}% ;"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

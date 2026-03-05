@@ -1,0 +1,157 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #353737;
+    text-align: center;
+    cursor: url('/static/Pokeball.cur'),auto;
+}   
+a,button,[onclick] {
+    cursor: url('/static/Pokeball.cur'),pointer;
+}
+.main-text{
+   
+    text-shadow: 0 0 10px;
+    font-size: 45px;
+    font-weight: bold;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    gap:20px;
+    padding: 20px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #131311;
+    border-radius: 10px;
+    background-color: #de959a;
+    text-align: center;
+    contain: content;
+    box-shadow: 0 0 10px 5px rgb(27, 26, 26);
+}
+.card img{
+
+            width: 240px;
+            height: 240px;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+            filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.9));
+            will-change: transform;
+        }
+.card img:hover{
+            transform: scale(1.1);
+           
+            
+        }
+.card a{
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+.card-name{
+             border: 1px solid #131311;
+            background-color: rgb(214, 205, 185);
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+           
+
+        }
+.search-container{
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+.search-bar{
+            background-color: #ffffff;
+            width: 300px;
+            padding: 12px 16px;
+            border: 2px solid #000000;
+            border-radius: 25px 0 0 25px;
+            outline: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow:inset 0 2px 4px rgba(0,0,0,0.1);
+            
+        }
+.search-bar:focus{
+            border-color:#747373;
+            box-shadow:0 0 8px rgb(168, 164, 164);
+        }
+.search-btn{
+            padding: 12px 24px;
+            border: none;
+            background-color: rgb(0, 0, 0);
+            color: #ffffff;
+            font-size: 16px;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+.search-btn:hover{
+            background-color: #4b0409;
+            transform: translate(-2px);
+        }
+.type-filter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:8px;
+    margin: 20px;
+
+}
+.type-btn{
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    background: #e0e0e0;
+    color: #333;
+    font-weight: bold;
+    transition:transform 0.2s ease;
+}
+.type-btn.active{
+    outline: 3px solid rgb(0, 0, 0);
+    outline-offset: 2px;
+    box-shadow: 0 0 10px 5px rgb(219, 218, 218);
+    transform: scale(1.1);
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+}
+.type-btn:hover{
+    box-shadow: 0 0 6px 10px rgba(0, 0, 0, 0.345);
+}
+.type-normal { background-color: #A8A77A; }
+.type-fire { background-color: #d5884d; }
+.type-water { background-color: #6d8dd3; }
+.type-electric { background-color: #dabd47; color: #333; }
+.type-grass { background-color: #96d471; }
+.type-ice { background-color: #96D9D6; color: #333; }
+.type-fighting { background-color: #e4514c; }
+.type-poison { background-color: #A33EA1; }
+.type-ground { background-color: #E2BF65; color: #333; }
+.type-flying { background-color: #A98FF3; }
+.type-psychic { background-color: #F95587; }
+.type-bug { background-color: #A6B91A; }
+.type-rock { background-color: #B6A136; }
+.type-ghost { background-color: #735797; }
+.type-dragon { background-color: #513892; }
+.type-dark { background-color: #705746; }
+.type-steel { background-color: #B7B7CE; color: #333; }
+.type-fairy { background-color: #D685AD; }
+.all-btn{
+    background: #ffffff;
+}
+.all-btn.active{
+    background: #ffffff;
+    border: 3px solid rgb(0, 0, 0);
+}

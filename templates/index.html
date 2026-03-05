@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="/static/style.css"> 
+</head>
+<body>
+    <h1 class="main-text">
+        <span style="color: red;">ᑭOKE</span>
+        <span style="color: #ffd900;;">ᗪE᙭ 🐦‍🔥</span>
+    </h1>
+    <div class="search-container">
+        <input type="text" id="pokemonsearch" placeholder="Enter pokemon name or ID.." class="search-bar" onkeyup="liveSearch()">
+        <button class="search-btn" onclick="searchPokemon()">Search</button>
+    </div>
+    <div class="type-filter">
+        <a href="/" class="type-btn all-btn {% if not selected_type %}active{% endif %}">All</a>
+
+        {% for type in types %}
+            <a href="/?type={{type}}"
+            class="type-btn type-{{type}} {% if selected_type==type %}active{% endif %}">
+                {{ type | capitalize }}
+            </a>
+        {% endfor %}
+    </div>
+    <div class="grid">
+        {% for pokemon in pokemons %}
+        <div class="card" data-name="{{pokemon.name}}" data-id="{{pokemon.id}}">
+            <a href="/pokemon/{{pokemon.id}}">
+                <img
+                loading="lazy"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ pokemon.id }}.png" alt="{{pokemon.name}}">
+                <div class="card-name">
+                <h2>
+                    {{pokemon.name | capitalize }} ◓⃙
+                </h2>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    <script>
+
+    function liveSearch(){
+        const input=document.getElementById("pokemonsearch").value.toLowerCase()
+        const cards=document.querySelectorAll(".card")
+        cards.forEach(card =>{
+            const name=card.dataset.name
+            const id=card.dataset.id
+
+            if(name.includes(input) || id.includes(input)){
+                card.style.display="flex"
+            }else{
+                card.style.display="none"
+            }
+        })
+    }
+
+        function searchPokemon() {
+            const input=document.getElementById('pokemonsearch').value.trim();
+            if(input){
+                window.location.href='/pokemon/'+ encodeURIComponent(input);
+            }else{
+                alert('please enter a pokemon name or ID');
+            }
+        }
+    </script>
+</body>
+</html>
