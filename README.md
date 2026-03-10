@@ -33,7 +33,7 @@ Run the application:
 python app.py
 
 ## Demo
-https://pokedex-dwoq.onrender.com/
+https://pokedex-beta-lyart.vercel.app/
 
 ## API
 
